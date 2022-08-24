@@ -1,0 +1,52 @@
+"""
+python -m venv venv --upgrade-deps
+source venv/bin/activate
+pip install django djangorestframework black ipython ipdb
+pip freeze > requirements.txt
+pip install -r requirements.txt     -- ler
+django-admin startproject hello_django .
+python manage.py startapp kontent
+    go to /settings -> installed_apps e adc
+    "kontent",
+
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+sqlite3 db.sqlite3 -header -column
+python manage.py shell
+
+pip install djangorestframeword
+    go to /settings -> installed_apps e adc
+    "rest_framework",
+
+add endpoints: on app/view.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class HelloView(APIView):
+    def get(self, request):
+        return Response('Hello Kenzie')
+
+create on app dir urls.py w:
+    from django.urls import path, 
+    from . import views
+
+    urlpatterns = [
+        path('hello/', views.HelloView.as_view())
+    ]
+
+no return não esquecer de colocar model_to_dict e importar from django.forms.models import model_to_dict
+
+depois da implementacao do serializerm i model_to_dict fica inutilizado.
+
+----
+
+model user de abstract user
+lembrar de no fim do setting colocar
+AUTH_USER_MODEL = "accounts.User"
+
+    "rest_framework.authtoken",
+
+
+
+"""
