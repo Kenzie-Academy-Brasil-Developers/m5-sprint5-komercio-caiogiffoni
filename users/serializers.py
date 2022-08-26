@@ -13,6 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
             )
         ],
     )
+    is_seller = serializers.BooleanField(required=True)
 
     class Meta:
         model = User
@@ -35,3 +36,18 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return User.objects.create_user(**validated_data)
+
+
+class UserIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "is_seller",
+            "date_joined",
+            "is_active",
+            "is_superuser",
+        ]

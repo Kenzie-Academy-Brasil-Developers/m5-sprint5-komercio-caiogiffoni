@@ -17,3 +17,14 @@ from users.serializers import UserSerializer
 class UserView(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class UserNewestView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+
+    serializer_class = UserSerializer
+
+    def get_queryset(self):
+      num = self.kwargs["num"]
+      return self.queryset.order_by("-date_joined")[0:num]
+      

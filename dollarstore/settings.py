@@ -48,6 +48,7 @@ THIRD_PARTY_APPS = [
 
 MY_APPS = [
     "users",
+    "products"
 ]
 
 REST_FRAMEWORK = {
