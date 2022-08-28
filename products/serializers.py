@@ -6,6 +6,10 @@ from products.models import Product
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     seller = UserIdSerializer(read_only=True)
+    price = serializers.DecimalField(
+        max_digits=10, decimal_places=2, min_value=0
+    )
+    quantity = serializers.IntegerField(min_value=0)
 
     class Meta:
         model = Product

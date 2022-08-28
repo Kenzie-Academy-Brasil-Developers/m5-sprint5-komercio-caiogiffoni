@@ -8,15 +8,17 @@ from rest_framework.views import APIView
 from products import serializers
 from products.mixins import CreateByMethodMixin, SerializerByMethodMixin
 from products.models import Product
-from products.serializers import ProductDetailFilterSerializer, ProductDetailSerializer, ProductSerializer
+from products.serializers import (
+    ProductDetailFilterSerializer,
+    ProductDetailSerializer,
+    ProductSerializer,
+)
 
 # Create your views here.
 
 
 class ProductsView(
-    CreateByMethodMixin,
-    SerializerByMethodMixin,
-    generics.ListCreateAPIView,
+    SerializerByMethodMixin, CreateByMethodMixin, generics.ListCreateAPIView
 ):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
@@ -28,7 +30,9 @@ class ProductsView(
     }
 
 
-class ProductsDetailView(SerializerByMethodMixin,generics.RetrieveUpdateAPIView):
+class ProductsDetailView(
+    SerializerByMethodMixin, generics.RetrieveUpdateAPIView
+):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
