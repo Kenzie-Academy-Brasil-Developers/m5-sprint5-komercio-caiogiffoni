@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: db_m5_sprint_5
+    image: postgres:14
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=caio
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=s5_generic
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U caio -d s5_generic"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    volumes:
+      - postgres_m5_sprint_5:/var/lib/postgresql/data
+
+volumes:
+  postgres_m5_sprint_5:
+    driver: local

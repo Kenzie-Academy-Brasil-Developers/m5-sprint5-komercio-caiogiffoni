@@ -2,6 +2,7 @@
 python -m venv venv --upgrade-deps
 source venv/bin/activate
 pip install django djangorestframework black ipython ipdb python-dotenv
+pip install psycopg2-binary (postgres)
 pip freeze > requirements.txt
 pip install -r requirements.txt     -- ler
 django-admin startproject hello_django .

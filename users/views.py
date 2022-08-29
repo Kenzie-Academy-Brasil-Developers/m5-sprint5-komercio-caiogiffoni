@@ -1,18 +1,14 @@
-from django.contrib.auth import authenticate
-from django.shortcuts import get_object_or_404, render
 from rest_framework import generics
 from rest_framework.authentication import TokenAuthentication
-from rest_framework.authtoken.models import Token
-from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAdminUser
-from rest_framework.views import APIView, Request, Response, status
 
 from users.models import User
-from users.serializers import UserSerializer
-
-# Create your views here.
-
+from users.permissions import IsOwner
+from users.serializers import (
+    UserPatchAdminSerializer,
+    UserPatchSerializer,
+    UserSerializer,
+)
 
 class UserView(generics.ListCreateAPIView):
     queryset = User.objects.all()
@@ -25,6 +21,21 @@ class UserNewestView(generics.ListCreateAPIView):
     serializer_class = UserSerializer
 
     def get_queryset(self):
-      num = self.kwargs["num"]
-      return self.queryset.order_by("-date_joined")[0:num]
-      
+        num = self.kwargs["num"]
+        return self.queryset.order_by("-date_joined")[0:num]
+
+
+class UserDetailView(generics.UpdateAPIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsOwner]
+
+    queryset = User.objects.all()
+    serializer_class = UserPatchSerializer
+
+
+class UserManagementDetailView(generics.UpdateAPIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAdminUser]
+
+    queryset = User.objects.all()
+    serializer_class = UserPatchAdminSerializer

@@ -38,7 +38,7 @@ class UserSerializer(serializers.ModelSerializer):
         return User.objects.create_user(**validated_data)
 
 
-class UserIdSerializer(serializers.ModelSerializer):
+class UserIdSerializer(UserSerializer):
     class Meta:
         model = User
         fields = [
@@ -49,5 +49,42 @@ class UserIdSerializer(serializers.ModelSerializer):
             "is_seller",
             "date_joined",
             "is_active",
+            "is_superuser",
+        ]
+
+
+class UserPatchSerializer(UserSerializer):
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "is_seller",
+            "date_joined",
+            "is_active",
+            "is_superuser",
+        ]
+        read_only_fields = [
+            "date_joined",
+            "is_active",
+            "is_superuser",
+        ]
+
+class UserPatchAdminSerializer(UserSerializer):
+    class Meta:
+        model = User
+        fields = [
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "is_seller",
+            "date_joined",
+            "is_active",
+        ]
+        read_only_fields = [
+            "date_joined",
             "is_superuser",
         ]

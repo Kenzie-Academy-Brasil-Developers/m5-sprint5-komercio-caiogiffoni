@@ -53,7 +53,9 @@ MY_APPS = ["users", "products"]
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.BasicAuthentication",
-    ]
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 2,
 }
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + MY_APPS
@@ -93,10 +95,14 @@ WSGI_APPLICATION = "dollarstore.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+  "default": {
+      "ENGINE": "django.db.backends.postgresql",
+      "NAME": os.getenv("POSTGRES_DB"),
+      "USER": os.getenv("POSTGRES_USER"),
+      "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+      "HOST": "127.0.0.1",
+      "PORT": 5432,
+  }
 }
 
 
