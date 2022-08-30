@@ -1,0 +1,1 @@
+web: gunicorn dollar-store-api.wsgi
