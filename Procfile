@@ -1,1 +1,1 @@
-web: gunicorn dollar-store-api.wsgi
+web:gunicorn dollarstore.wsgi --logs-level debug
