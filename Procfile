@@ -1,0 +1,1 @@
+web: gunicorn dollarstore.wsgi --log-level debug
