@@ -7,7 +7,7 @@ from products.models import Product
 from users.models import User
 
 
-class UserTest(TestCase):
+class ProductModelTest(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
 

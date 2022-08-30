@@ -7,7 +7,7 @@ from products.models import Product
 class ProductDetailSerializer(serializers.ModelSerializer):
     seller = UserIdSerializer(read_only=True)
     price = serializers.DecimalField(
-        max_digits=10, decimal_places=2, min_value=0
+        max_digits=10, decimal_places=2, min_value=0, coerce_to_string=False
     )
     quantity = serializers.IntegerField(min_value=0)
 

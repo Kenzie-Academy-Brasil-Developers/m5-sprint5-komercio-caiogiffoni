@@ -3,3 +3,4 @@ __pycache__
 db.sqlite3
 _db.sqlite3
 .env
+# htmlcov

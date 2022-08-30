@@ -1,0 +1,114 @@
+[
+  {
+    "model": "users.user",
+    "pk": "2e66ec8c-4784-473f-a68c-c6a4d6e2e015",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$I1STsMc6ZPcQdzL8hFPOle$XBitls7ONZi83gmUT54fD9ZsqdKSbzOZs32NZJLknWY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "quero ser ale",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-29T22:03:31.498Z",
+      "first_name": "alexandre",
+      "last_name": "alves",
+      "is_seller": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": "aea99c32-0211-4f16-8b7e-a3733d3dbc37",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$x7z5yuVIDIflrRVnc6SngE$MWSz2UtmqIlAEh9eygyMLh4pwOnE5UvaLWqn0DRG6e0=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "quero ser super user",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2022-08-29T22:02:48.521Z",
+      "first_name": "rodrigo",
+      "last_name": "alves",
+      "is_seller": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": "fb29f17e-0d0b-4593-8772-0dc7463d2b5b",
+    "fields": {
+      "password": "pbkdf2_sha256$390000$qs3IVjnRGQcMRW0T2dpau4$l6ujJr4g2Vvwxzn6yuh2T/FqF84VKc+FHPvfWmLV72o=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "chan",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-08-29T22:01:03.344Z",
+      "first_name": "caio",
+      "last_name": "giffoni",
+      "is_seller": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": "1e6a8dac-4b68-4f1c-b325-7b1014fd73e1",
+    "fields": {
+      "description": "Smartband XYZ 200",
+      "price": "100.99",
+      "quantity": 2,
+      "is_active": true,
+      "seller": "2e66ec8c-4784-473f-a68c-c6a4d6e2e015"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": "36a14e34-d22e-4b8e-b4a6-6ff978bf4e79",
+    "fields": {
+      "description": "Smartband XYZ 3.0",
+      "price": "100.99",
+      "quantity": 2,
+      "is_active": true,
+      "seller": "2e66ec8c-4784-473f-a68c-c6a4d6e2e015"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": "564affb8-b644-40ec-af06-5167f318e635",
+    "fields": {
+      "description": "Smartband XYZ 3.0",
+      "price": "100.99",
+      "quantity": 2,
+      "is_active": true,
+      "seller": "2e66ec8c-4784-473f-a68c-c6a4d6e2e015"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": "8c0b7b41-1d52-4c29-85af-fe1ec93f0970",
+    "fields": {
+      "description": "Smartband XYZ 3.0",
+      "price": "100.99",
+      "quantity": 2,
+      "is_active": true,
+      "seller": "2e66ec8c-4784-473f-a68c-c6a4d6e2e015"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": "e51fd42c-8bb8-43bd-9b6e-c08d945896fb",
+    "fields": {
+      "description": "Smartband XYZ 3.0",
+      "price": "100.99",
+      "quantity": 2,
+      "is_active": true,
+      "seller": "2e66ec8c-4784-473f-a68c-c6a4d6e2e015"
+    }
+  }
+]

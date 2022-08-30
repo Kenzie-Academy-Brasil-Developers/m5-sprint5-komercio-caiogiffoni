@@ -4,7 +4,7 @@ from django.test import TestCase
 from users.models import User
 
 
-class UserTest(TestCase):
+class UserModelTest(TestCase):
     @classmethod
     def setUpTestData(cls) -> None:
 
