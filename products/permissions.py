@@ -11,6 +11,7 @@ class IsSellerOrReadOnly(permissions.BasePermission):
         return (
             request.method in SAFE_METHODS
             or request.user
+            and request.user.is_authenticated
             and request.user.is_seller
         )
 
@@ -22,5 +23,6 @@ class IsProductSellerOrReadOnly(permissions.BasePermission):
         return (
             request.method in SAFE_METHODS
             or request.user
+            and request.user.is_authenticated
             and request.user.id == product.seller_id
         )

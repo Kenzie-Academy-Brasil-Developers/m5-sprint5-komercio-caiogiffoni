@@ -80,3 +80,22 @@ install add file .coveragerc
 coverage run ./manage.py test
 
 coverage html
+
+
+---- 
+docker
+
+ 1987  docker ps -a
+ 1988  docker image ps
+ 1989  docker image ls
+ 1990  docker image ls -aq
+ 1991  docker image rm $(docker image ls -aq)
+ 1992  docker image ls -aq
+ 1993  docker ps -a
+ 1994  docker image rm $(docker image ls -aq)
+ 1995  docker ps 
+ 1996  docker container rm $(docker container ls -aq)
+ 1997  docker container ls
+ 1998  docker ps
+ 1999  docker ps -a
+ 2000  docker image rm $(docker image ls -aq)
