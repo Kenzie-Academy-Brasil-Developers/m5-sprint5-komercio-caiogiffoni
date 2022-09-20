@@ -1,10 +1,10 @@
 <h1 align="center">
-BandKamp
+Dollar Store
 </h1>
 
 ## 💻 Projeto
 
-Aplicação de gerenciamento de discografia.
+Aplicação de gerenciamento de usuários e produtos.
 
 ## 🔨 Implementações
 
